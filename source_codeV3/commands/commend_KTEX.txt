@@ -1,0 +1,40 @@
+open CMD put your path to your KTEXTOOL folder
+
+in my case i put this path: 
+
+cd C:\Users\user_name\Desktop\KTEX
+
+this commend is for Convert format from tex to png (Extract a single file)
+
+
+python shank2_ktex_v4.py extract NameFile.tex
+
+
+:Extract entire folder
+
+python shank2_ktex_v4.py extract *.tex -o output/
+
+
+this if you want one file and don't forget after type your path add your file name like this shank.tex:
+
+Get-ChildItem "your_path" | ForEach-Object { python shank2_ktex_v4.py extract $_.FullName }
+
+
+if you want to extract all type:
+
+Get-ChildItem "your_path" | ForEach-Object { python shank2_ktex_v4.py extract $_.FullName }
+
+
+for rebuild:
+
+python shank2_ktex_v4.py rebuild NameFile.png
+
+
+for rebuild all:
+
+Get-ChildItem *.png | ForEach-Object { python shank2_ktex_v4.py rebuild $_.Name }
+
+
+for info:
+
+python shank2_ktex_v4.py info NameFile.tex
